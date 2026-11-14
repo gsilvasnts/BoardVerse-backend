@@ -29,6 +29,10 @@ public class ProdutoEntity {
     @Column(nullable = false)
     private BigDecimal preco;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoria_id")
+    private CategoriaEntity categoria;
+
     @Column(name = "min_jogadores", nullable = false)
     private Integer minJogadores;
 
